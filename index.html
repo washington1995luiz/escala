@@ -117,7 +117,7 @@
             let bodyTable = ''
             for (let i = 0; i < listFunc.length; i++) {
                 bodyTable +=
-                    `<tr">
+                    `<tr>
             <td name="name" style="border-bottom: 1px solid black;border-radius: 2px;padding: 3px;">${listFunc[i].name}</td>
             <td name="cargo" style="border-bottom: 1px solid black;border-left: 1px solid black;padding: 3px;border-radius: 2px;">${listFunc[i].cargo}</td>
             <td><select id="select_${i}">
@@ -129,9 +129,13 @@
                         </select>
                         </td>
             <td><input id="time_${i}" name="time" type="time"></td>
-            <td><button id="add_${i}" onclick="addFuncToHours({name:'${listFunc[i].name}', cargo: '${listFunc[i].cargo}', id: ${i}})">Add</button></td>
-            <td><button id="deleteFunc_${i}" onclick="deleteEmployeer({id:${i}})">Excluir</button>
             </tr>
+            <tr style="text-align: end;">
+                    <td></td>
+                    <td></td>
+                    <td><button id="deleteFunc_${i}" onclick="deleteEmployeer({id:${i}})">Excluir</button></td>
+                    <td><button id="add_${i}" onclick="addFuncToHours({name:'${listFunc[i].name}', cargo: '${listFunc[i].cargo}', id: ${i}})">Add</button></td>
+                </tr>
         `
             }
             document.querySelector("#table1").innerHTML = `<table >
