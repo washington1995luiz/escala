@@ -482,7 +482,7 @@
         })
 
         let compartilhar = document.getElementById("compartilhar")
-        compartilhar.addEventListener("click", (event) => {
+        compartilhar.addEventListener("click", async (event) => {
             let texto = 'Escala\n\n'
             if (listHours.length > 0) {
                 for (let i = 0; i < listHours.length; i++) {
@@ -511,7 +511,7 @@
                 }
             }
 
-            navigator.clipboard.writeText(texto) 
+            await navigator.clipboard.writeText(texto) 
             alert('Escala copiada para área de transferência')
         })
     </script>
